@@ -1,0 +1,24 @@
+Codido de Triger;
+
+DELIMITER |
+CREATE TRIGGER NewFactura
+	AFTER insert
+    ON facturas for each row
+BEGIN
+	call ActualizacionInventario(new.idProducto, new.Cantidad);
+END;
+|
+DELIMITER ;
+
+
+Codigo de Procedimiento Almacenado:
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ActualizacionInventario`(IN IdP INT, IN Can INT)
+BEGIN
+declare CantInv INT;
+SET CantInv = (select inventario.cantidad
+from inventario
+where inventario.idProducto = IdP);
+	UPDATE myfood.inventario SET cantidad = (CantInv - Can) 
+	WHERE (idProducto = IdP);
+END
