@@ -9,7 +9,7 @@ Esto lo hara llamando a un procedimiento almacenado llamado ActualizarInventario
 
 ![image](https://github.com/user-attachments/assets/151d38be-e514-4096-bd74-a7fe8efa0d0d)
 
-como ejemplo podemos ver la tabal inventario, y facturas:
+como ejemplo podemos ver las tablas inventario, y facturas:
 
 ![image](https://github.com/user-attachments/assets/4888ed55-c6c0-4ab0-8d31-b8c108b23ca3)
 
